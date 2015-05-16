@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="co.edu.udea.cmovil.gr1.yamba" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="Yamba5Gr7"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".StatusActivity"
+            android:label="Yamba5Gr7" >
+            <intent-filter>
+                <action android:name="co.edu.udea.cmovil.gr1.yamba.tweet" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/action_settings" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Yamba5Gr7-ContentProvider" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".RefreshService" >
+        </service>
+
+        <provider
+            android:name=".StatusProviders"
+            android:authorities="co.edu.udea.cmovil.gr1.yamba.StatusProviders"
+            android:enabled="true"
+            android:exported="false" >
+        </provider>
+
+        <activity
+            android:name=".DetailsActivity"
+            android:label="@string/title_activity_details" >
+        </activity>
+    </application>
+
+</manifest>
